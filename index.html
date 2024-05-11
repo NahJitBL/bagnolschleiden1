@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #87CEEB; /* Sky blue */
+        }
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: #FFD700; /* Yellow */
+            border-radius: 50%;
+            animation: rotateSun 10s linear infinite;
+        }
+        .road {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            background-color: #808080; /* Gray */
+        }
+        .car {
+            position: absolute;
+            bottom: 20%;
+            left: -200px;
+            width: 200px;
+            height: 100px;
+            background-color: #ff4500; /* Red */
+            border-radius: 10px;
+            animation: driveCar 5s linear infinite;
+        }
+        .car:before,
+        .car:after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            width: 30px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .car:before {
+            left: 20px;
+        }
+        .car:after {
+            right: 20px;
+        }
+        @keyframes rotateSun {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes driveCar {
+            0% { left: -200px; }
+            100% { left: calc(100% + 200px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="road"></div>
+    <div class="car"></div>
+</body>
+</html>
